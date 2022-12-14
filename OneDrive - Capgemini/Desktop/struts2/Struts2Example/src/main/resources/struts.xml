@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="user" extends="struts-default">
+		<action name="Login">
+			<result>/login.jsp</result>
+		</action>
+		<action name="Welcome" class="Action.WelcomeUserAction">
+			<result name="success">/welcome_user.jsp</result>
+		</action>
+
+		<action name="product" class="Action.ProductAction">
+			<result name="success">/WEB-INF/views/product/index.jsp</result>
+		</action>
+
+		<action name="cart" class="Action.CartAction">
+			<result name="success">/WEB-INF/views/cart/index.jsp</result>
+		</action>
+		<action name="buy" class="Action.CartAction" method="buy">
+			<result name="success">/WEB-INF/views/cart/index.jsp</result>
+		</action>
+		<action name="remove" class="Action.CartAction" method="remove">
+			<result name="success">/WEB-INF/views/cart/index.jsp</result>
+		</action>
+	</package>
+
+</struts>
